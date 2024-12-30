@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Google Form Autofill",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/forms/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+
+  // {
+  //   "manifest_version": 3,
+  //   "name": "Google Form Autofill",
+  //   "description": "Automatically extract and fill Google Forms data.",
+  //   "version": "1.0",
+  //   "permissions": ["activeTab", "storage"],
+  //   "background": {
+  //     "service_worker": "background.js"
+  //   },
+  //   "content_scripts": [
+  //     {
+  //       "matches": ["https://docs.google.com/forms/*"],
+  //       "js": ["content.js"]
+  //     }
+  //   ],
+  //   "action": {
+  //     "default_popup": "popup.html"
+  //   }
+  // }
+}
